@@ -112,8 +112,17 @@ export default function Home() {
         </Column>
       </Column>
 
-
-      {newsletter.display && <Mailchimp newsletter={newsletter} />}
+      <Badge
+        background="brand-alpha-weak"
+        paddingX="12"
+        paddingY="4"
+        onBackground="neutral-strong"
+        textVariant="label-default-s"
+        arrow={false}
+        href={newsletter.href}
+      >
+        <Row paddingY="2">{newsletter.title}</Row>
+      </Badge>
     </Column>
   );
 }

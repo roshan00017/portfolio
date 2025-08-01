@@ -15,13 +15,8 @@ const person = {
 
 const newsletter = {
   display: true,
-  title: <>Subscribe to {person.firstName}'s Newsletter</>,
-  description: (
-    <>
-      I occasionally write about design, technology, and share thoughts on the
-      intersection of creativity and engineering.
-    </>
-  ),
+  title: <>Check out my work</>,
+  href: "/work/",
 };
 
 const social = [
@@ -53,13 +48,13 @@ const home = {
   description: `Portfolio website showcasing my work as a ${person.role}`,
   headline: <>WELCOME, Explore and lets Connect</>,
   featured: {
-    display: false,
+    display: true,
     title: (
       <>
-        Recent project: <strong className="ml-4">Once UI</strong>
+        Check out my CV <strong className="ml-4"></strong>
       </>
     ),
-    href: "/work/building-once-ui-a-customizable-design-system",
+    href: "/about/",
   },
   subline: (
     <>
@@ -129,7 +124,7 @@ const about = {
         images: [
           // optional: leave the array empty if you don't want to display images
           {
-            src: "/images/projects/project-01/cover-01.jpg",
+            src: "/images/projects/project-01/Screenshot from 2025-08-01 15-57-51.png",
             alt: "Once UI Project",
             width: 16,
             height: 9,
