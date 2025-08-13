@@ -87,7 +87,7 @@ const about = {
     title: "Introduction",
     description: (
       <>
-        I am a Asia/Kathmandu (Nepal) based Softweare Developer . I expertise
+        I am a Asia/Kathmandu (Nepal) based Software Developer . I expertise
         lies in different Tech Stacks like Node.js , Laravel , Java.
         Mongodb,Next.js,React.js,Typescript,Socket.io <br />
         Docker,nginix,Redis,Kafka,Cloudflare Storage <br />
