@@ -100,8 +100,15 @@ const about = {
     title: "Work Experience",
     experiences: [
       {
+        company: "LeftClickTech",
+        timeframe: "2025(Nov) - present",
+        role: "Software Engineer",
+        achievements: [],
+        images: [],
+      },
+      {
         company: "Tradeawaay",
-        timeframe: "2024 - Present",
+        timeframe: "2024 - 2025 (1 year 6 months)",
         role: "Lead Backend Developer",
         achievements: [
           <>
