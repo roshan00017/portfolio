@@ -13,7 +13,7 @@ import {
   Meta,
   Schema,
 } from "@once-ui-system/core";
-import { home, about, person, newsletter, baseURL, routes } from "@/resources";
+import { home, about, person, newsletter, baseURL, routes, resumeUrl } from "@/resources";
 import { Mailchimp } from "@/components";
 import { Projects } from "@/components/work/Projects";
 
@@ -123,6 +123,19 @@ export default function Home() {
       >
         <Row paddingY="2">{newsletter.title}</Row>
       </Badge>
+      <Row gap="8" horizontal="center">
+        <Badge
+          background="brand-alpha-weak"
+          paddingX="12"
+          paddingY="4"
+          onBackground="neutral-strong"
+          textVariant="label-default-s"
+          arrow={false}
+          href={resumeUrl}
+        >
+          <Row paddingY="2">View my resume</Row>
+        </Badge>
+      </Row>
     </Column>
   );
 }

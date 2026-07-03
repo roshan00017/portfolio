@@ -1,5 +1,8 @@
 import { Logo } from "@once-ui-system/core";
 
+const resumeUrl =
+  "https://pub-7fda52d1a4824cbab6f98a51d84b2c05.r2.dev/resume/Roshan_Gyawali_CV.pdf";
+
 const person = {
   firstName: "Roshan",
   lastName: "Gyawali",
@@ -54,7 +57,7 @@ const home = {
         Check out my CV <strong className="ml-4"></strong>
       </>
     ),
-    href: "/about/",
+    href: resumeUrl,
   },
   subline: (
     <>
@@ -257,4 +260,4 @@ const gallery = {
   ],
 };
 
-export { person, social, newsletter, home, about, blog, work, gallery };
+export { person, social, newsletter, home, about, blog, work, gallery, resumeUrl };
