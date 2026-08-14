@@ -1,0 +1,50 @@
+---
+title: "InterviewPrep"
+summary: "A gamified, full-stack technical interview prep platform with spaced-repetition scheduling, timed mock interviews, and AI-powered answer evaluation — 700+ curated questions, live in production."
+publishedAt: "2026-06-15"
+link: "https://interviewpal.netlify.app"
+images:
+  - "/images/projects/project-03/Screenshot from 2026-08-14 19-55-51.png"
+  - "/images/projects/project-03/Screenshot from 2026-08-14 19-55-57.png"
+  - "/images/projects/project-03/Screenshot from 2026-08-14 19-56-08.png"
+  - "/images/projects/project-03/Screenshot from 2026-08-14 19-56-18.png"
+  - "/images/projects/project-03/Screenshot from 2026-08-14 19-56-27.png"
+  - "/images/projects/project-03/Screenshot from 2026-08-14 19-56-43.png"
+  - "/images/projects/project-03/Screenshot from 2026-08-14 19-56-49.png"
+---
+
+## Go Check Out
+
+- **Live app** – https://interviewpal.netlify.app
+- **Source code** – https://github.com/roshan00017/iterviewpreppal
+
+## Overview
+
+InterviewPrep is a production-grade, full-stack platform for technical interview preparation, built around the science of **spaced repetition**. Instead of aimlessly re-reading notes, users work through a single question at a time, self-assess their understanding, and let the app schedule the next review at the optimal moment — so every session is deliberate and every review reinforces weak areas.
+
+The whole system runs on a **Turborepo + pnpm monorepo** with three independently deployed apps and shared packages, a layered Express backend on Postgres, and an AI evaluation pipeline that gracefully handles free-tier API rate limits. It is fully deployed to production (Netlify frontend, Render API, Neon Postgres).
+
+## Key Features
+
+- 🔄 **Spaced-Repetition Core Loop** – Mark a question "I know it" or "I don't know it", reveal the answer, give a self-corrected verdict, and the app auto-schedules the next review based on your confidence.
+- ⏱️ **Mock Interview Mode** – Timed, typed practice that simulates a real interviewer's pacing and pressure.
+- 🤖 **AI Answer Evaluation** – Submissions are evaluated against the expected answer with a scored verdict. Built-in **multi-model failover** walks a fallback list of Gemini models when the primary hits a rate limit (429), so the feature stays available on free-tier quotas.
+- 🎮 **Gamification** – Skill radar, streak badges, and progress tracking that turn preparation into a habit.
+- 📚 **700+ Curated Questions** across multiple tech stacks, seeded with deterministic data.
+- 🔐 **Secure, Modern Auth** – Self-hosted Better Auth (email/password) over Prisma + Neon, with httpOnly session cookies, RBAC-protected dashboard routes, and rate-limited AI endpoints keyed per user.
+
+## Architecture & Engineering Highlights
+
+- **Monorepo**: Turborepo + pnpm workspaces — `apps/web` (Next.js App Router), `apps/api` (Express), `apps/docs` (Fumadocs), plus shared `packages/types` and `packages/validation` so Zod schemas power both the client and server from a single source of truth.
+- **Layered backend**: strict `Route → Controller → Service → Repository` separation; only repositories touch Prisma; business logic never sees Express request objects.
+- **Consistent API contract**: every response uses a `{ success, data }` / `{ success, error }` envelope with centralized error handling via a typed `ApiError`.
+- **Design system**: token-driven UI (shadcn/ui + Radix primitives) with CSS-variable theming, full light/dark mode, and zero hardcoded colors.
+- **Quality gates**: TypeScript strict mode, ESLint/Prettier, 200+ unit and integration tests (Vitest, Supertest, React Testing Library), and a CI pipeline that runs type-check, lint, test, and build on every change.
+- **Production deployment**: multi-stage Docker builds per app, Postgres on Neon (with migrations), and free-tier hosting (Netlify + Render).
+
+## Technologies Used
+
+- **Frontend** – Next.js (App Router), TypeScript, Tailwind CSS, Radix UI / shadcn-style components, React Testing Library
+- **Backend** – Express, TypeScript, Prisma ORM, PostgreSQL (Neon), Better Auth, Zod, Pino
+- **AI** – Google Gemini API with configurable multi-model failover
+- **Tooling & Ops** – Turborepo, pnpm workspaces, Vitest, Supertest, Docker, ESLint/Prettier
