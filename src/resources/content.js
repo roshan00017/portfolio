@@ -104,9 +104,22 @@ const about = {
     experiences: [
       {
         company: "LeftClickTech",
-        timeframe: "2025(Nov) - present",
+        timeframe: "2025(Nov) - 2026(Jun)",
         role: "Software Engineer",
-        achievements: [],
+        achievements: [
+          <>
+            Developed responsive, accessible user interfaces with React.js and
+            TypeScript for production web applications.
+          </>,
+          <>
+            Built scalable full-stack features using Node.js, Hono, TypeScript,
+            and a Turborepo monorepo architecture.
+          </>,
+          <>
+            Integrated AWS services (Bedrock, Lambda, S3, EC2) to ship
+            cloud-based infrastructure and AI-powered product features.
+          </>,
+        ],
         images: [],
       },
       {
